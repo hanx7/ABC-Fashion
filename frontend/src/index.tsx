@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import HomePage from './pages/homePage';
 // @ts-ignore
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
+import OrderDetails from "./pages/orderDetailsPage";
 
 
 export const subPath = {
@@ -18,7 +19,7 @@ root.render(
         <div>
             <BrowserRouter>
                 <Switch>
-                    <Route path={subPath.home} exact component={HomePage} />
+                    <Route path={subPath.home} exact component={OrderDetails} />
                 </Switch>
             </BrowserRouter>
         </div>
