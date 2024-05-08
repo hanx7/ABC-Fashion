@@ -53,7 +53,7 @@ This project is a web application for tracking shipments of ABC Fashion. It allo
 
 ## Technologies Used
 
-- React.js
+- React.ts
 - Express.js
 - Axios
 - CSS
