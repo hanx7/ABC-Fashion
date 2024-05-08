@@ -7,6 +7,54 @@
   pointer-events: none;
 }
 
+.allOrderDetailsPage {
+  padding: 20px;
+}
+
+.singleOrder {
+  background-color: beige;
+  width:200px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.searchOrder {
+  margin-left:50px;
+}
+
+.allOrders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageNavigationSection{
+  display:flex;
+  justify-content: center;
+}
+
+.pageNavigationSection button{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.searchSection input {
+  margin-left: 15px;
+}
+
+.searchSection button{
+  margin-left: 15px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import SingleOrder from '../components/singleOrder';
+import {Order} from "../components/singleOrder";
 
-interface Customer {
-    name: string;
-    address: string;
-    city: string;
-    country: string;
-    latitude: number;
-    longitude: number;
-}
 
-interface Order {
-    id: string;
-    start: string;
-    carrier: string;
-    status: string;
-    customer: Customer;
-    orderNumber: string;
-}
 
-const OrderDetails: React.FC = () => {
+const AllOrderDetails: React.FC = () => {
     const [orderNumber, setOrderNumber] = useState<string>('');
     const [orderData, setOrderData] = useState<Order[] | null>(null);
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -73,30 +59,27 @@ const OrderDetails: React.FC = () => {
     };
 
     return (
-        <div>
-            <div>
-                <input
-                    type="text"
-                    placeholder="Please enter your order number"
-                    value={orderNumber}
-                    onChange={handleInputChange}
-                />
-                <button onClick={() => fetchData(orderNumber)}>Fetch Order</button>
+        <div className="allOrderDetailsPage">
+            <div className="searchSection">
+                <h1>ABC Fashion Shipments</h1>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Please enter your order number"
+                        value={orderNumber}
+                        onChange={handleInputChange}
+                    />
+                    <button onClick={() => fetchData(orderNumber)}>Fetch Order</button>
+                </div>
             </div>
             {orderData ? (
                 <div>
-                    <h2>Order Details</h2>
-                    {orderData.map((order, index) => (
-                        <div key={index}>
-                            <h3>Order {index + 1 + (currentPage - 1) * 10}</h3>
-                            <p>Order Number: {order.orderNumber}</p>
-                            <p>Start Date: {order.start}</p>
-                            <p>Carrier: {order.carrier}</p>
-                            <p>Status: {order.status}</p>
-                            <p>Customer: {order.customer.name}</p>
-                        </div>
-                    ))}
-                    <div>
+                    <div className="allOrders">
+                        {orderData.map((order, index) => (
+                            <SingleOrder key={index} order={order} index={index + 1 + (currentPage - 1) * 10}/>
+                        ))}
+                    </div>
+                    <div className="pageNavigationSection">
                         <button onClick={goToPreviousPage} disabled={currentPage === 1}>Previous</button>
                         <span>Page {currentPage} of {totalPages}</span>
                         <button onClick={goToNextPage} disabled={currentPage === totalPages}>Next</button>
@@ -109,4 +92,4 @@ const OrderDetails: React.FC = () => {
     );
 };
 
-export default OrderDetails;
+export default AllOrderDetails;
