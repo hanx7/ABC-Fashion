@@ -30,7 +30,7 @@
   justify-content: center;
 }
 
-.searchSection {
+.filterSection {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,6 +40,7 @@
 .pageNavigationSection{
   display:flex;
   justify-content: center;
+  margin-top:20px
 }
 
 .pageNavigationSection button{
@@ -47,14 +48,38 @@
   margin-right: 10px;
 }
 
-.searchSection input {
+.filterSection input {
+  margin-left: 50px;
+  width: 220px;
+}
+
+.filterSection div {
+  display: flex;
+  flex-direction: row;
+}
+
+.filterSection button{
   margin-left: 15px;
 }
 
-.searchSection button{
-  margin-left: 15px;
+.filterSection .sortSection {
+  margin-left: 30px;
 }
 
+@media only screen and (max-width: 600px) {
+  .filterSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filterSection .sortSection {
+    margin-top:10px
+  }
+
+
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

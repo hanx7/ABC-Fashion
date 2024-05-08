@@ -16,21 +16,6 @@ export interface Order {
     customer: Customer;
     orderNumber: string;
 }
-//
-// import {
-//     setKey,
-//     setDefaults,
-//     setLanguage,
-//     setRegion,
-//     fromAddress,
-//     fromLatLng,
-//     fromPlaceId,
-//     setLocationType,
-//     geocode,
-//     RequestType,
-// } from "react-geocode";
-
-
 
 interface OrderProps {
     order: Order;
@@ -39,20 +24,9 @@ interface OrderProps {
 
 const SingleOrder: React.FC<OrderProps> = ({ order, index }) => {
 
-    const [orderLocation, setOrderLocation] = useState<string>('');
-
-
-
-    // geocode(RequestType.LATLNG, "48.8583701,2.2922926")
-    //     .then(({ results }) => {
-    //         const address = results[0].formatted_address;
-    //         setOrderLocation(address)
-    //         console.log(address);
-    //     })
-    //     .catch(console.error);
     return (
         <div className="singleOrder">
-            <h3>Order {index}</h3>
+            <h3>{index}</h3>
             <p>Order Number: {order.orderNumber}</p>
             <p>Start Date: {new Date(order.start).toDateString()}</p>
             <p>Carrier: {order.carrier}</p>
@@ -61,10 +35,6 @@ const SingleOrder: React.FC<OrderProps> = ({ order, index }) => {
             <p>Address: {order.customer.address}</p>
             <p>City: {order.customer.city}</p>
             <p>Country: {order.customer.country}</p>
-            {/*<p>Location: {orderLocation}</p>*/}
-
-            {/*<p>Latitude: {order.customer.lat}</p>*/}
-            {/*<p>Longitude: {order.customer.long}</p>*/}
         </div>
     );
 };
