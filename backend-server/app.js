@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const {get} = require("axios");
 const cors = require('cors');
 
@@ -27,8 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
+//Fetch  shipments
 app.get('/shipments', async (req, res) => {
   try {
     const orderNumber = req.query.orderNumber;
