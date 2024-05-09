@@ -14,7 +14,7 @@ This project is a web application for tracking shipments of ABC Fashion. It allo
 1. Clone the repository:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/hanx7/ABC-Fashion.git
     ```
 
 2. Install dependencies for frontend:
